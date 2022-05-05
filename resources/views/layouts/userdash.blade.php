@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <!-- BEGIN LOGO -->
-                <a href={{ url('') }}>
+                <a href={{ url('dashboard') }}>
                     <img src={{ url('assets/img/logo.png') }} class="logo" alt=""
                         data-src={{ url('assets/img/logo.png') }}
                         data-src-retina={{ url('assets/img/logo2x.png') }} width="106" height="21" />

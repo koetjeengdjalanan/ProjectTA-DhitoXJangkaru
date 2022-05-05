@@ -16,7 +16,8 @@
                     <div class="overlayer bottom-right fullwidth">
                         <div class="overlayer-wrapper">
                             <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
-                                <div class="pull-right"> <a href="#" class="hashtags transparent"> #Art Design </a>
+                                <div class="pull-right"> <a href="categories/{{ $post->category->slug }}"
+                                        class="hashtags transparent">{{ $post->category->name }}</a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

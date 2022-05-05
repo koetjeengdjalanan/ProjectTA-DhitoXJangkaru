@@ -5,31 +5,31 @@
 <ul>
     <li class="start active">
         <a href="#"><i class="material-icons">home</i>
-            <span class="title">Link</span> <span class="selected"></span>
+            <span class="title">Home</span> <span class="selected"></span>
         </a>
     </li>
     <li class="">
         <a href="#">
             <i class="material-icons">email</i>
-            <span class="title">Link</span>
+            <span class="title">E-Mail</span>
             <span class="badge badge-disable pull-right">203</span>
         </a>
     </li>
     <li class="">
         <a href="javascript:;">
             <i class="material-icons">more_horiz</i>
-            <span class="title">Link</span> <span class="arrow"></span>
+            <span class="title">Student's Life</span> <span class="arrow"></span>
         </a>
         <ul class="sub-menu">
-            <li><a href="javascript:;"> Level 1 </a></li>
+            <li><a href="javascript:;"> User Management </a></li>
             <li>
                 <a href="javascript:;">
-                    <span class="title">Level 2</span>
+                    <span class="title">Misc. Form</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li><a href="javascript:;"> Sub Menu </a></li>
-                    <li><a href="ujavascript:;"> Sub Menu </a></li>
+                    <li><a href="javascript:;"> Leave Form </a></li>
+                    <li><a href="ujavascript:;"> Quit Form </a></li>
                 </ul>
             </li>
         </ul>
