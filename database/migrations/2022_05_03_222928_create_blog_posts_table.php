@@ -18,12 +18,13 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->foreignId('user_id');
             $table->string('title');
-            $table->string('author');
+            // $table->string('author');
             $table->string('uuid')->unique();
+            $table->text('thumbnail');
             $table->text('excerpt');
             $table->text('body');
             $table->timestamp('published')->nullable();
-            $table->timestamp('deletef_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

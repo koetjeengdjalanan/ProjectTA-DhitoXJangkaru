@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/blog/{slug}', [BlogController::class, 'singlePost']);
+Route::get('/blog/{uuid}', [BlogController::class, 'singlePost']);
 
 Route::get('/categories', function () {
     return view('categories', [

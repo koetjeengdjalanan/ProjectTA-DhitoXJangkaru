@@ -16,7 +16,7 @@
             <tbody>
                 @foreach ($posts as $post)
                     {{-- @dump($post->title) --}}
-                    <tr onclick="location.href='/blog/{{ $post->id }}';" style="cursor: pointer;">
+                    <tr onclick="location.href='/blog/{{ $post->uuid }}';" style="cursor: pointer;">
                         <td>{{ $post->updated_at->format('j M \'y') }}</td>
                         <td>{{ $post->title }}</td>
                         <td colspan="2"><small>{{ $post->excerpt }}</small></td>

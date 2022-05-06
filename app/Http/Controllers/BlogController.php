@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function singlePost($slug)
+    public function singlePost($uuid)
     {
         return view('blog', [
             'title' => 'Igracious | Campus\'s News',
-            'post' => BlogPosts::find($slug)
+            'post' => BlogPosts::firstWhere('uuid', $uuid)
         ]);
     }
 }

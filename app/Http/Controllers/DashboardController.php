@@ -11,7 +11,8 @@ class DashboardController extends Controller
     {
         return view('dashboard', [
             'title' => 'Igracious | User\'s Dashboard',
-            'posts' => BlogPosts::all()
+            // 'posts' => BlogPosts::all()
+            'posts' => BlogPosts::with(['user', 'category'])->orderBy('updated_at', 'desc')->limit(6)->get()
         ]);
     }
 }

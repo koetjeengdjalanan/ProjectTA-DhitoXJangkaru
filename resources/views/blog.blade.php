@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-sm-8">
             <h1>{{ $post->title }}</h1>
-            <h3>By: {{ $post->author }}</h3>
+            <h3>By: {{ $post->user->name }}</h3>
         </div>
         {{-- this coloumn bellow need more of your attention --}}
         <div class="col-sm-4">
