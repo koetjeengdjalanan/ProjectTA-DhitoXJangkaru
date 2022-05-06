@@ -9,17 +9,18 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!-- BEGIN PLUGIN CSS -->
-    <link href={{ url('assets/plugins/pace/pace-theme-flash.css') }} rel="stylesheet" type="text/css"
+    <link href="{{ url('assets/plugins/pace/pace-theme-flash.css') }}" rel="stylesheet" type="text/css"
         media="screen" />
-    <link href={{ url('assets/plugins/bootstrapv3/css/bootstrap.min.css') }} rel="stylesheet" type="text/css" />
-    <link href={{ url('assets/plugins/bootstrapv3/css/bootstrap-theme.min.css') }} rel="stylesheet" type="text/css" />
-    <link href={{ url('assets/plugins/font-awesome/css/font-awesome.css') }} rel="stylesheet" type="text/css" />
-    <link href={{ url('assets/plugins/animate.min.css') }} rel="stylesheet" type="text/css" />
-    <link href={{ url('assets/plugins/jquery-scrollbar/jquery.scrollbar.css') }} rel="stylesheet" type="text/css" />
+    <link href="{{ url('assets/plugins/bootstrapv3/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('assets/plugins/bootstrapv3/css/bootstrap-theme.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ url('assets/plugins/font-awesome/css/font-awesome.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('assets/plugins/animate.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('assets/plugins/jquery-scrollbar/jquery.scrollbar.css') }}" rel="stylesheet" type="text/css" />
     <!-- END PLUGIN CSS -->
     <!-- BEGIN CORE CSS FRAMEWORK -->
-    <link href={{ url('https://fonts.googleapis.com/icon?family=Material+Icons') }} rel="stylesheet" />
-    <link href={{ url('webarch/css/webarch.css') }} rel="stylesheet" type="text/css" />
+    <link href="{{ url('https://fonts.googleapis.com/icon?family=Material+Icons') }}" rel="stylesheet" />
+    <link href="{{ url('webarch/css/webarch.css') }}" rel="stylesheet" type="text/css" />
     <!-- END CORE CSS FRAMEWORK -->
 </head>
 
@@ -94,7 +95,7 @@
                         <li class="m-r-10 input-prepend inside search-form no-boarder">
                             <span class="add-on">
                                 <i class="material-icons">search</i></span>
-                            <input name="" type="text" class="no-boarder" placeholder="Search Dashboard"
+                            <input name="" type="text" class="no-boarder" placeholder="Search"
                                 style="width: 250px" />
                         </li>
                     </ul>
@@ -424,21 +425,22 @@
     </div>
     <!-- END CONTENT -->
     <!-- BEGIN CORE JS FRAMEWORK-->
-    <script src={{ url('assets/plugins/pace/pace.min.js') }} type="text/javascript"></script>
+    <script src="{{ url('assets/plugins/pace/pace.min.js') }}" type="text/javascript"></script>
     <!-- BEGIN JS DEPENDECENCIES-->
-    <script src={{ url('assets/plugins/jquery/jquery-1.11.3.min.js') }} type="text/javascript"></script>
-    <script src={{ url('assets/plugins/bootstrapv3/js/bootstrap.min.js') }} type="text/javascript"></script>
-    <script src={{ url('assets/plugins/jquery-block-ui/jqueryblockui.min.js') }} type="text/javascript"></script>
-    <script src={{ url('assets/plugins/jquery-unveil/jquery.unveil.min.js') }} type="text/javascript"></script>
-    <script src={{ url('assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }} type="text/javascript"></script>
-    <script src={{ url('assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js') }} type="text/javascript">
+    <script src="{{ url('assets/plugins/jquery/jquery-1.11.3.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/plugins/bootstrapv3/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/plugins/jquery-block-ui/jqueryblockui.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/plugins/jquery-unveil/jquery.unveil.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js') }}" type="text/javascript">
     </script>
-    <script src={{ url('assets/plugins/jquery-validation/js/jquery.validate.min.js') }} type="text/javascript"></script>
-    <script src={{ url('assets/plugins/bootstrap-select2/select2.min.js') }} type="text/javascript"></script>
+    <script src="{{ url('assets/plugins/jquery-validation/js/jquery.validate.min.js') }}" type="text/javascript">
+    </script>
+    <script src="{{ url('assets/plugins/bootstrap-select2/select2.min.js') }}" type="text/javascript"></script>
     <!-- END CORE JS DEPENDECENCIES-->
     <!-- BEGIN CORE TEMPLATE JS -->
-    <script src={{ url('webarch/js/webarch.js') }} type="text/javascript"></script>
-    <script src={{ url('assets/js/chat.js') }} type="text/javascript"></script>
+    <script src="{{ url('webarch/js/webarch.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/js/chat.js') }}" type="text/javascript"></script>
     <!-- END CORE TEMPLATE JS -->
 </body>
 

@@ -4,7 +4,7 @@
 </p>
 <ul>
     <li class="start active">
-        <a href="#"><i class="material-icons">home</i>
+        <a href="/dashboard"><i class="material-icons">home</i>
             <span class="title">Home</span> <span class="selected"></span>
         </a>
     </li>
@@ -14,6 +14,16 @@
             <span class="title">E-Mail</span>
             <span class="badge badge-disable pull-right">203</span>
         </a>
+    </li>
+    <li class="">
+        <a href="javascript:;"> <i class="material-icons">how_to_reg</i> <span class="title">User's
+                Registration</span>
+            <span class="arrow"></span> </a>
+        <ul class="sub-menu" style="display: none;">
+            <li> <a href="/registration">Administrator </a> </li>
+            <li> <a href="">Student's</a> </li>
+            <li> <a href="">Teacher's</a> </li>
+        </ul>
     </li>
     <li class="">
         <a href="javascript:;">

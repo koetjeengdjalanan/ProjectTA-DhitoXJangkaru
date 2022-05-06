@@ -11,6 +11,8 @@
                     <th>Title</th>
                     <th>Excerpt</th>
                     <th></th>
+                    <th colspan="2">Action</th>
+                    {{-- <th></th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -18,8 +20,16 @@
                     {{-- @dump($post->title) --}}
                     <tr onclick="location.href='/blog/{{ $post->uuid }}';" style="cursor: pointer;">
                         <td>{{ $post->updated_at->format('j M \'y') }}</td>
-                        <td>{{ $post->title }}</td>
-                        <td colspan="2"><small>{{ $post->excerpt }}</small></td>
+                        <td>{{ Str::limit($post->title, 40, '...') }}</td>
+                        <td colspan="2"><small>{{ Str::limit($post->excerpt, 90, '...') }}</small></td>
+                        <td><a href="#">
+                                <i class="fa fa-pencil-square-o"></i>
+                            </a>
+                        </td>
+                        <td><a href="#">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

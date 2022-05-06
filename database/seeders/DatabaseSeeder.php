@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(2)->create();
+        \App\Models\User::factory(50)->create();
 
         Category::insert([
             [
@@ -44,6 +44,6 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
-        BlogPosts::factory(20)->create();
+        BlogPosts::factory(100)->create();
     }
 }
