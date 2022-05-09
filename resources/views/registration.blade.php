@@ -3,9 +3,18 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="grid simple form-grid">
                 <div class="grid-title no-border">
-                    <h4>Traditional <span class="semi-bold">Validation</span></h4>
+                    <h4>Singular <span class="semi-bold">Students Account's </span> Registration</h4>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"></a>
                         <a href="#grid-config" data-toggle="modal" class="config"></a>
@@ -14,77 +23,42 @@
                     </div>
                 </div>
                 <div class="grid-body no-border">
-                    <form action="#" id="form_traditional_validation" name="form_traditional_validation" role="form"
-                        autocomplete="off" class="validate" novalidate="novalidate">
-                        <div class="form-group">
-                            <label class="form-label">Amount</label> <span class="help">e.g. "5000"</span>
-                            <input class="form-control" id="form1Amount" name="form1Amount" type="number" required=""
-                                aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Card Holder's Name</label> <span class="help">e.g. "Jane
-                                Smith"</span>
-                            <div class="input-with-icon right">
-                                <i class=""></i>
-                                <input class="form-control" id="form1CardHolderName" name="form1CardHolderName"
-                                    type="text" required="" aria-required="true">
+                    <form action="/registration/administration" id="form_traditional_validation"
+                        name="form_traditional_validation" role="form" autocomplete="off" class="validate"
+                        novalidate="novalidate" method="POST">
+                        @csrf
+                        <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+                            <div class="col-md-6 col-sm-6">
+                                <input class="form-control" id="name" name="name" placeholder="Username" type="text"
+                                    value="{{ old('name') }}" required>
+                            </div>
+                            <div class="col-md-5 col-sm-5">
+                                <input class="form-control" id="password" name="password" placeholder="Password"
+                                    type="password" value="{{ Str::random(16) }}">
+                            </div>
+                            <div class="col-md-1 col-sm-1 px-3">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-refresh"></i>
+                                </button>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Card Number</label>z <span class="help">e.g.
-                                "5689569985"</span>
-                            <div class="input-with-icon right">
-                                <input class="form-control" id="form1CardNumber" name="form1CardNumber" type="text"
-                                    pattern="[0-9]{13,16}" required="" aria-required="true">
+                        <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+                            <div class="col-md-12">
+                                <input class="form-control" id="email" name="email" placeholder="Mailing Address"
+                                    value="{{ old('email') }}" type="email" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Card Type</label> <span class="help">e.g. "Visa"</span>
-                            <div class=" right">
-                                <i class=""></i>
-                                <div class="select2-container form-control select2" id="s2id_cardType"><a
-                                        href="javascript:void(0)" onclick="return false;" class="select2-choice"
-                                        tabindex="-1"> <span class="select2-chosen">
-                                            Select Type
-                                        </span><abbr class="select2-search-choice-close"></abbr> <span
-                                            class="select2-arrow"><b></b></span></a><input
-                                        class="select2-focusser select2-offscreen" type="text" id="s2id_autogen1">
-                                    <div class="select2-drop select2-display-none select2-with-searchbox">
-                                        <div class="select2-search"> <input type="text" autocomplete="off" autocorrect="off"
-                                                autocapitalize="off" spellcheck="false" class="select2-input"> </div>
-                                        <div class="scroll-wrapper select2-results" style="position: relative;">
-                                            <ul class="select2-results scroll-content"
-                                                style="margin-bottom: -17px; margin-right: -17px;"> </ul>
-                                            <div class="scroll-element scroll-x">
-                                                <div class="scroll-element_outer">
-                                                    <div class="scroll-element_size"></div>
-                                                    <div class="scroll-element_track"></div>
-                                                    <div class="scroll-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="scroll-element scroll-y">
-                                                <div class="scroll-element_outer">
-                                                    <div class="scroll-element_size"></div>
-                                                    <div class="scroll-element_track"></div>
-                                                    <div class="scroll-bar"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><select class="form-control select2 select2-offscreen" id="cardType" name="cardType"
-                                    data-init-plugin="select2" required="" tabindex="-1" aria-required="true">
-                                    <option value="">
-                                        Select Type
-                                    </option>
-                                    <option value="1">
-                                        Visa
-                                    </option>
-                                    <option value="2">
-                                        Master
-                                    </option>
-                                </select>
+                        {{-- <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+                            <div class="col-md-6 col-sm-6">
+                                <input class="form-control" id="reg_first_Name" name="reg_first_Name"
+                                    placeholder="First Name" type="text" required>
                             </div>
-                        </div>
+                            <div class="col-md-6 col-sm-6">
+                                <input class="form-control" id="reg_first_Name" name="reg_first_Name"
+                                    placeholder="Last Name" type="text" required>
+                            </div>
+                        </div> --}}
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                         <div class="form-actions">
                             <div class="pull-right">
                                 <button class="btn btn-success btn-cons" type="submit"><i class="icon-ok"></i>

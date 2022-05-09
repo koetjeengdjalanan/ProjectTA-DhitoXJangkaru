@@ -17,9 +17,9 @@ class BlogPostsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(mt_rand(2, 8)),
+            'title' => $this->faker->sentence(mt_rand(2, 3)),
             'category_id' => mt_rand(1, 3),
-            'user_id' => mt_rand(1, 2),
+            'user_id' => mt_rand(1, 10),
             'uuid' => $this->faker->uuid(),
             'thumbnail' => $this->faker->imageUrl(397, 241, 'campus'),
             'created_at' => now()->addSecond(mt_rand(0, 9999999)),

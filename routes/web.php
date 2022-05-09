@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LoginController::class, 'index']);
-Route::get('/registration', [RegistrationController::class, 'index']);
+Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/blog/{uuid}', [BlogController::class, 'singlePost']);
@@ -41,3 +41,6 @@ Route::get('/categories/{category:slug}', function (Category $category) {
         'posts' => $category->blogPosts->sortByDesc('updated_at')
     ]);
 });
+
+Route::get('/registration', [RegistrationController::class, 'index']);
+Route::post('/registration/administration', [RegistrationController::class, 'store']);

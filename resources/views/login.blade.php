@@ -46,10 +46,11 @@
             </div>
             <div class="col-md-5">
                 <br>
-                <form action="index.html" class="login-form validate" id="login-form" method="post" name="login-form">
+                <form action="/login" class="login-form validate" id="login-form" method="post" name="login-form">
+                    @csrf
                     <div class="row">
                         <div class="form-group col-md-10">
-                            <label class="form-label">Username</label>
+                            <label class="form-label">SSO Login</label>
                             <input class="form-control" id="txtusername" name="txtusername" type="email" required>
                         </div>
                     </div>
@@ -68,6 +69,7 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <div class="row">
                         <div class="col-md-10">
                             <button class="btn btn-primary btn-cons pull-right" type="submit">Login</button>

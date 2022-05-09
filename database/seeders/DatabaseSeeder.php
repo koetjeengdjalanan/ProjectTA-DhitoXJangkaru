@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\BlogPosts;
 use App\Models\Category;
+use App\Models\Major;
+use App\Models\School;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -18,7 +21,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(50)->create();
+        User::insert([
+            'name' => 'The Watcher',
+            'email' => 'super@admin.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('root'),
+            'remember_token' => Str::random(10),
+        ]);
+        \App\Models\User::factory(9)->create();
 
         Category::insert([
             [
@@ -45,5 +55,62 @@ class DatabaseSeeder extends Seeder
         ]);
 
         BlogPosts::factory(100)->create();
+
+        School::insert([
+            ['name' =>  'Fakultas Teknik Elektro'],
+            ['name' =>  'Fakultas Rekayasa Industri'],
+            ['name' =>  'Fakultas Informatika'],
+            ['name' =>  'Fakultas Ekonomi dan Bisnis'],
+            ['name' =>  'Fakultas Ilmu Terapan'],
+            ['name' =>  'Fakultas Komunikasi dan Bisnis'],
+            ['name' =>  'Fakultas Industri Kreatif'],
+        ]);
+
+        Major::insert([
+            ['name' => 'S1 Teknik Telekomunikasi', 'school_id' => '1'],
+            ['name' => 'S1 Teknik Elektro', 'school_id' => '1'],
+            ['name' => 'S1 Teknik Fisika', 'school_id' => '1'],
+            ['name' => 'S1 Teknik Komputer', 'school_id' => '1'],
+            ['name' => 'S1 Teknik Biomedis', 'school_id' => '1'],
+            ['name' => 'S1 Teknik Sistem Energi', 'school_id' => '1'],
+            ['name' => 'S2 Teknik Elektro', 'school_id' => '1'],
+            ['name' => 'S1 Teknik Industri', 'school_id' => '2'],
+            ['name' => 'S1 Sistem Informasi', 'school_id' => '2'],
+            ['name' => 'S1 Teknik Logistik', 'school_id' => '2'],
+            ['name' => 'S2 Teknik Industri', 'school_id' => '2'],
+            ['name' => 'S2 Sistem Informasi', 'school_id' => '2'],
+            ['name' => 'S1 Informatika', 'school_id' => '3'],
+            ['name' => 'S1 Teknologi Informasi', 'school_id' => '3'],
+            ['name' => 'S1 Rekayasa Perangkat Lunak', 'school_id' => '3'],
+            ['name' => 'S1 PJJ Informatika', 'school_id' => '3'],
+            ['name' => 'S1 Sains Data', 'school_id' => '3'],
+            ['name' => 'S2 Informatika', 'school_id' => '3'],
+            ['name' => 'S2 Ilmu Forensik', 'school_id' => '3'],
+            ['name' => 'S3 Informatika', 'school_id' => '3'],
+            ['name' => 'S1 Manajemen', 'school_id' => '4'],
+            ['name' => 'S1 Akuntansi', 'school_id' => '4'],
+            ['name' => 'S2 Manajemen', 'school_id' => '4'],
+            ['name' => 'S2 PJJ Manajemen', 'school_id' => '4'],
+            ['name' => 'D3 Teknologi Telekomunikasi', 'school_id' => '5'],
+            ['name' => 'D3 Rekayasa Perangkat Lunak Aplikasi', 'school_id' => '5'],
+            ['name' => 'D3 Sistem Informasi', 'school_id' => '5'],
+            ['name' => 'D3 Sistem Informasi Akuntansi', 'school_id' => '5'],
+            ['name' => 'D3 Teknologi Komputer', 'school_id' => '5'],
+            ['name' => 'D3 Manajemen Pemasaran', 'school_id' => '5'],
+            ['name' => 'D3 Perhotelan', 'school_id' => '5'],
+            ['name' => 'S1 Terapan Teknologi Rekayasa Multimedia', 'school_id' => '5'],
+            ['name' => 'S1 Administrasi Bisnis', 'school_id' => '6'],
+            ['name' => 'S1 Ilmu Komunikasi', 'school_id' => '6'],
+            ['name' => 'S1 Hubungan Masyarakat Digital', 'school_id' => '6'],
+            ['name' => 'S1 Penyiaran Digital', 'school_id' => '6'],
+            ['name' => 'S2 Ilmu Komunikasi', 'school_id' => '6'],
+            ['name' => 'S2 Administrasi Bisnis', 'school_id' => '6'],
+            ['name' => 'S1 Desain Komunikasi Visual', 'school_id' => '7'],
+            ['name' => 'S1 Desain Produk', 'school_id' => '7'],
+            ['name' => 'S1 Desain Interior', 'school_id' => '7'],
+            ['name' => 'S1 Kriya', 'school_id' => '7'],
+            ['name' => 'S1 Seni Rupa', 'school_id' => '7'],
+            ['name' => 'S2 Desain', 'school_id' => '7'],
+        ]);
     }
 }
