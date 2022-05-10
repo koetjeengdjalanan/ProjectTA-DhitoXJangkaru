@@ -196,9 +196,51 @@
                     </div>
                     <div class="user-info sm">
                         <div class="username">
-                            Fred <span class="semi-bold">Smith</span>
+                            @auth
+                                {{ auth()->user()->name }}
+                            @else
+                                Fred <span class="semi-bold">Smith</span>
+                            @endauth
                         </div>
-                        <div class="status">Life goes on...</div>
+                        <div class="status">Welcome,
+                            @switch(Str::substr(auth()->user()->sso_id, 1, 1))
+                                @case(0)
+                                    {!! '<span class="semi-bold"> Admin </span>' !!}
+                                @break
+
+                                @case(1)
+                                    {!! '<span class="semi-bold"> S1 Student </span>' !!}
+                                @break
+
+                                @case(2)
+                                    {!! '<span class="semi-bold"> S2 Student </span>' !!}
+                                @break
+
+                                @case(3)
+                                    {!! '<span class="semi-bold"> S3 Student </span>' !!}
+                                @break
+
+                                @case(4)
+                                    {!! '<span class="semi-bold"> D3 Student </span>' !!}
+                                @break
+
+                                @case(5)
+                                    {!! '<span class="semi-bold"> Dean </span>' !!}
+                                @break
+
+                                @case(6)
+                                    {!! '<span class="semi-bold"> Teacher </span>' !!}
+                                @break
+
+                                @case(7)
+                                    {!! '<span class="semi-bold"> Other </span>' !!}
+                                @break
+
+                                @default
+                                    {!! '<span class="semi-bold"> Not Available </span>' !!}
+                                @break
+                            @endswitch
+                        </div>
                     </div>
                 </div>
                 <!-- END MINI-PROFILE -->
@@ -217,7 +259,12 @@
                 <div class="details-status">
                     <span class="animate-number" data-value="86" data-animation-duration="560">86</span>%
                 </div>
-                <a href="lockscreen.html"><i class="material-icons">power_settings_new</i></a>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-white btn-xs btn-mini">
+                        <i class="material-icons">power_settings_new</i></a>
+                    </button>
+                </form>
             </div>
         </div>
         <!-- END SIDEBAR -->

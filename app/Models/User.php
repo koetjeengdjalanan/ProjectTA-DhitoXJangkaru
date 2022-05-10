@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'userdetail_id',
     ];
 
     /**
@@ -45,5 +46,10 @@ class User extends Authenticatable
     public function blogPosts()
     {
         return $this->hasMany(BlogPosts::class);
+    }
+
+    public function userDetail()
+    {
+        return $this->belongsTo(UserDetail::class);
     }
 }

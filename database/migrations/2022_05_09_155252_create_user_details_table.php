@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('major')->nullable();
             $table->timestamps();
         });
     }

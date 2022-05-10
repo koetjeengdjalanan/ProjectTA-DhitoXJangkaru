@@ -18,10 +18,11 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'sso_id' => '1' . mt_rand(1, 7) . mt_rand(0, 1) . mt_rand(1, 7) . now()->format('y') . str_pad(mt_rand(0, 9999), 4, '0', STR_PAD_LEFT),
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt('uercoba'), // password
             'remember_token' => Str::random(10),
         ];
     }

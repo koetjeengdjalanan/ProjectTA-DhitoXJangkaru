@@ -26,6 +26,13 @@
 <body class="error-body no-top" data-original="/assets/img/tokongnanas-telkom.jpg" style="background-image: url('assets/img/tokongnanas-telkom.jpg'); background-repeat: no-repeat;
     background-size: cover;">
     <div class="container">
+        @if (session()->has('loginError'))
+            <div class="alert alert-error" style="position: absolute;display: block;left: 40%;top: 10%;">
+                <button data-dismiss="alert" class="close"></button>
+                {{ session('loginError') }}
+                {{-- <button type="button" class="btn btn-danger btn-sm btn-small pull-right">Take Action</button> --}}
+            </div>
+        @endif
         <div class="row login-container column-seperation " style="background-color: rgba(229, 233, 236, 0.85)">
             <div class="col-md-5 col-md-offset-1">
                 <h2>
@@ -51,13 +58,17 @@
                     <div class="row">
                         <div class="form-group col-md-10">
                             <label class="form-label">SSO Login</label>
-                            <input class="form-control" id="txtusername" name="txtusername" type="email" required>
+                            <input class="form-control @error('sso_id') error @enderror" id="sso_id" name="sso_id"
+                                autofocus required>
+                            @error('sso_id')
+                                <label id="sso_id-error" class="error" for="sso_id">{{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-10">
                             <label class="form-label">Password</label> <span class="help"></span>
-                            <input class="form-control" id="txtpassword" name="txtpassword" type="password" required>
+                            <input class="form-control" id="password" name="password" type="password" required>
                         </div>
                     </div>
                     <div class="row">

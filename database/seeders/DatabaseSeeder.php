@@ -21,14 +21,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::insert([
+        User::create([
+            'sso_id' => '1000220001',
             'name' => 'The Watcher',
             'email' => 'super@admin.com',
             'email_verified_at' => now(),
             'password' => bcrypt('root'),
             'remember_token' => Str::random(10),
         ]);
-        \App\Models\User::factory(9)->create();
+        \App\Models\User::factory(24)->create();
 
         Category::insert([
             [

@@ -26,6 +26,12 @@
         </ul>
     </li>
     <li class="">
+        <a href="/finduser">
+            <i class="material-icons">people</i>
+            <span class="title">Find User</span>
+        </a>
+    </li>
+    <li class="">
         <a href="javascript:;">
             <i class="material-icons">more_horiz</i>
             <span class="title">Student's Life</span> <span class="arrow"></span>

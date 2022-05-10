@@ -31,14 +31,19 @@
                     <div class="tiles white ">
                         <div class="tiles-body">
                             <div class="row">
-                                <div class="user-profile-pic text-left"> <img width="69" height="69"
-                                        data-src-retina="assets/img/profiles/bc2x.jpg" data-src="assets/img/profiles/bc.jpg"
-                                        src="assets/img/profiles/bc.jpg" alt="">
-                                    <div class="pull-right m-r-20 m-t-35"> <span
-                                            class="bold text-black small-text">{{ $post->updated_at->format('D, d M y') }}</span>
-                                    </div>
+                                {{-- <div class="user-profile-pic text-left"> --}}
+                                {{-- <img width="69" height="69" data-src-retina="assets/img/profiles/bc2x.jpg" data-src="assets/img/profiles/bc.jpg"
+                                        src="assets/img/profiles/bc.jpg" alt=""> --}}
+                                <div class="col-md-7 text-black bold">
+                                    {{ Str::before($post->user->name, ' ') }}
+                                    <span class="semi-bold">{{ Str::afterLast($post->user->name, ' ') }}</span>
                                 </div>
-                                <div class="col-md-5 no-padding">
+                                {{-- <div class="pull-right m-r-20 m-t-35"> <span --}}
+                                <div class="col-md-5"> <span
+                                        class="bold text-black small-text">{{ $post->updated_at->format('D, d M y') }}</span>
+                                </div>
+                                {{-- </div> --}}
+                                {{-- <div class="col-md-5 m-t-4">
                                     <div class="user-comment-wrapper">
                                         <div class="comment">
                                             <div class="user-name text-black bold">
@@ -49,7 +54,7 @@
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="row">
                                 <div class="col-md-12 no-padding">
