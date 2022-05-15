@@ -16,7 +16,15 @@ return new class extends Migration
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('major')->nullable();
+            $table->string('gender')->nullable();
+            $table->date('birthday')->nullable();
+            $table->text('address')->nullable();
+            $table->text('cityadd')->nullable();
+            $table->text('provadd')->nullable();
+            $table->text('countryadd')->nullable();
+            $table->integer('postal')->nullable();
+            $table->bigInteger('phone')->nullable();
+            // $table->foreignId('major')->nullable();
             $table->timestamps();
         });
     }

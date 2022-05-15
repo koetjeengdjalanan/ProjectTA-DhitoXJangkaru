@@ -36,7 +36,7 @@ Perhaps this is the nearest to the true ussage of SSO Login in our humble opinio
 3. Group 3 (16):
    - Is the last two digits of enroollment year
 4. Group 4 (0056)
-   - Is the incremental number present at the end, this number will ignore any other number before and only will goes up as the number of the applicant rises.
+   - Is the incremental number present at the end, this number increased baes in schools and year.
 
 ## This Application is Powered By:
 

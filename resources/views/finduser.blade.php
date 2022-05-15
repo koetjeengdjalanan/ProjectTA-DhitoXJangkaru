@@ -3,8 +3,24 @@
 @section('content')
     <h1>User Finder</h1>
     {{-- @dump($users) --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <button class="close" data-dismiss="alert"></button>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if (session()->has('success'))
+        <div class="alert alert-success">
+            <button class="close" data-dismiss="alert"></button>
+            {{ session('success') }}
+        </div>
+    @endif
     <hr>
-    <div style="background-color: white">
+    <div style="background-color: white; padding: 0.5rem;">
         <table class="table table-hover no-more-tables">
             <thead>
                 <tr>
@@ -12,7 +28,6 @@
                     <th>Name</th>
                     <th>Position</th>
                     <th colspan="2">Action</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -59,13 +74,20 @@
                                 @break
                             @endswitch
                         </td>
-                        <td><a href="#">
+                        <td style="width: 2rem; text-align: right"><a href="#">
                                 <i class="fa fa-pencil-square-o"></i>
                             </a>
                         </td>
-                        <td><a href="#">
-                                <i class="fa fa-trash-o"></i>
-                            </a>
+                        <td style="width: 2rem">
+                            <form id='{{ 'f.userDelete.' . $user->id }}' action="/finduser/delete" method="post">
+                                @csrf
+                                <input type="hidden" name="user_id" value={{ $user->id }}>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                <a href="#"
+                                    onclick="document.getElementById('{{ 'f.userDelete.' . $user->id }}').submit()">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

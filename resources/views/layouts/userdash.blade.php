@@ -139,21 +139,16 @@
                             </a>
                             <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="user-options">
                                 <li>
-                                    <a href="user-profile.html"> My Account</a>
-                                </li>
-                                <li>
-                                    <a href="calender.html">My Calendar</a>
-                                </li>
-                                <li>
-                                    <a href="email.html">
-                                        My Inbox&nbsp;&nbsp;
-                                        <span class="badge badge-important animated bounceIn">2</span>
-                                    </a>
+                                    <a href="/user"> My Account</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <a href="login.html"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Log
-                                        Out</a>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-white btn-xs btn-mini" style="width: 100%">
+                                            <i class="material-icons">power_settings_new</i> <span>Log Out</span>
+                                        </button>
+                                    </form>
                                 </li>
                             </ul>
                         </li>
@@ -262,7 +257,7 @@
                 <form action="/logout" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-white btn-xs btn-mini">
-                        <i class="material-icons">power_settings_new</i></a>
+                        <i class="material-icons">power_settings_new</i>
                     </button>
                 </form>
             </div>
@@ -481,13 +476,17 @@
     <script src="{{ url('assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}" type="text/javascript"></script>
     <script src="{{ url('assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js') }}" type="text/javascript">
     </script>
+    <script src="{{ url('assets/plugins/jquery-inputmask/jquery.inputmask.min.js') }}" type="text/javascript"></script>
     <script src="{{ url('assets/plugins/jquery-validation/js/jquery.validate.min.js') }}" type="text/javascript">
     </script>
     <script src="{{ url('assets/plugins/bootstrap-select2/select2.min.js') }}" type="text/javascript"></script>
     <!-- END CORE JS DEPENDECENCIES-->
+    <!-- OTHER JS DEPENDENCIES -->
+    <script src="{{ url('assets/plugins/dropzone/dropzone.min.js') }}" type="text/javascript"></script>
     <!-- BEGIN CORE TEMPLATE JS -->
     <script src="{{ url('webarch/js/webarch.js') }}" type="text/javascript"></script>
     <script src="{{ url('assets/js/chat.js') }}" type="text/javascript"></script>
+    <script src="{{ url('assets/js/dev.js') }}" type="text/javascript"></script>
     <!-- END CORE TEMPLATE JS -->
 </body>
 

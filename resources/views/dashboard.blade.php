@@ -34,10 +34,17 @@
                                 {{-- <div class="user-profile-pic text-left"> --}}
                                 {{-- <img width="69" height="69" data-src-retina="assets/img/profiles/bc2x.jpg" data-src="assets/img/profiles/bc.jpg"
                                         src="assets/img/profiles/bc.jpg" alt=""> --}}
-                                <div class="col-md-7 text-black bold">
-                                    {{ Str::before($post->user->name, ' ') }}
-                                    <span class="semi-bold">{{ Str::afterLast($post->user->name, ' ') }}</span>
-                                </div>
+                                @if (empty($post->user->name))
+                                    <div class="col-md-7 text-black bold">
+                                        Anony
+                                        <span class="semi-bold"> Mouse</span>
+                                    </div>
+                                @else
+                                    <div class="col-md-7 text-black bold">
+                                        {{ Str::before($post->user->name, ' ') }}
+                                        <span class="semi-bold">{{ Str::afterLast($post->user->name, ' ') }}</span>
+                                    </div>
+                                @endif
                                 {{-- <div class="pull-right m-r-20 m-t-35"> <span --}}
                                 <div class="col-md-5"> <span
                                         class="bold text-black small-text">{{ $post->updated_at->format('D, d M y') }}</span>

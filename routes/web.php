@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FindUserController;
@@ -26,7 +27,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-Route::get('/blog/{uuid}', [BlogController::class, 'singlePost']);
+Route::get('/blog/{uuid}', [BlogController::class, 'singlePost'])->middleware('auth');
 // Route::get('/categories/{category}', [CategoryController::class, 'index']);
 
 Route::get('/categories', function () {
@@ -42,9 +43,18 @@ Route::get('/categories/{category:slug}', function (Category $category) {
         // 'posts' => $category->blogPosts,
         'posts' => $category->blogPosts->sortByDesc('updated_at')
     ]);
+})->middleware('auth');
+
+Route::get('/registration', [RegistrationController::class, 'index'])->middleware('auth');
+Route::post('/registration', [RegistrationController::class, 'store'])->middleware('auth');
+Route::get('/registration/major/{id}', [RegistrationController::class, 'requestMajor'])->name('major.index')->middleware('auth');
+Route::get('/registration/requestSSO/{id}', [RegistrationController::class, 'requestSSO'])->name('sso.index');
+
+Route::get('/finduser', [FindUserController::class, 'index'])->middleware('auth');
+Route::post('/finduser/delete', [FindUserController::class, 'delete'])->middleware('auth');
+
+Route::get('/user', [AccountController::class, 'index']);
+Route::post('/user/passUpdate', [AccountController::class, 'update']);
+Route::get('/user/checkCurrent', function () {
+    return auth()->user();
 });
-
-Route::get('/registration', [RegistrationController::class, 'index']);
-Route::post('/registration/administration', [RegistrationController::class, 'store']);
-
-Route::get('/finduser', [FindUserController::class, 'index']);
